@@ -5,17 +5,11 @@ import AddPage              from './pages/AddPage';
 import {Route}              from 'react-router-dom';
 
 const Root = () => (
-  <div className="app">
-    <div className="header">
-      <div className="center">
-        <Navigation />
-      </div>
-    </div>
+  <div className="container">
+    <Navigation />
 
-    <div className="center">
-      <Route path="/" exact component={MainPage}/>
-      <Route path="/new" component={AddPage}/>
-    </div>
+    <Route path="/" exact component={MainPage}/>
+    <Route path="/new" component={AddPage}/>
   </div>
 );
 

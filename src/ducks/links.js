@@ -162,7 +162,7 @@ function * sagaVoteUp({ id }) {
 
 function * sagaVoteDown({ id }) {
   const ref = firebase.database().ref(`links/${ id }`);
-  const current = yield select( getItemById, id);
+  const current = yield select(getItemById, id);
 
   const updated = {
     ...current,

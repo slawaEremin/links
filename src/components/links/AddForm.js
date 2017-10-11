@@ -7,15 +7,16 @@ const AddForm = (props) => {
   const { handleSubmit, invalid, submitting } = props;
 
   return (
-    <div className="b-addform">
+    <div>
       <form onSubmit={handleSubmit}>
         <Field name="name" component={InputField} label="Name" />
         <Field name="url" component={InputField} label="Url" />
 
         <div className="b-addform__btn">
-          <button type="submit" className="b-button" disabled={invalid || submitting}>
-            Submit
-          </button>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={invalid || submitting}>Submit</button>
         </div>
       </form>
     </div>

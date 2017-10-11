@@ -26,21 +26,25 @@ class List extends React.Component {
     const items = links.items;
 
     return (
-      <div className="b-list">
-        {  Object.keys(items).map( id => {
+      <table className="table">
+        <tbody>
+
+        {  Object.keys(items).map(id => {
           const link = items[id];
 
           return (
-            <Item
-              key={id}
-              {...link}
-              onDelete={ this.handleDelete.bind(this, id) }
-              onVoteUp={ this.handleVoteUp.bind(this, id) }
-              onVoteDown={ this.handleVoteDown.bind(this, id) }
-            />
+            <tr key={id}>
+              <Item
+                {...link}
+                onDelete={ this.handleDelete.bind(this, id) }
+                onVoteUp={ this.handleVoteUp.bind(this, id) }
+                onVoteDown={ this.handleVoteDown.bind(this, id) }
+              />
+            </tr>
           )
         })}
-      </div>
+        </tbody>
+      </table>
     )
   }
 }

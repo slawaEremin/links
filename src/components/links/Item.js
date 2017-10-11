@@ -5,16 +5,16 @@ const Item = (props) => {
   return (
     (
       <div className="b-item">
-        <div
-          className="b-item__up"
+        <a
+          className="btn btn-outline-success btn-sm"
           onClick={props.onVoteUp}>
-          Up
-        </div>
-        <div
-          className="b-item__down"
+          +
+        </a>
+        <a
+          className="btn btn-outline-danger btn-sm"
           onClick={props.onVoteDown}>
-          Down
-        </div>
+          -
+        </a>
 
         <span className="b-item__votes">
           {props.votes}
@@ -27,9 +27,9 @@ const Item = (props) => {
           {props.name}
         </a>
 
-        <div
-          className="b-item__delete"
-          onClick={props.onDelete}>x</div>
+        <a  className="close b-item__delete" onClick={props.onDelete}>
+          <span aria-hidden="true">&times;</span>
+        </a>
       </div>
     )
   )

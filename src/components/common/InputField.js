@@ -1,17 +1,16 @@
 import React from 'react';
 
 const InputField = ({ input, label, meta: { error, touched } }) => {
-  const errorText = touched && error && <div className="b-input__error">{error}</div>;
+  const errorText = touched && error && <small className="form-text text-muted">{error}</small>;
 
   return (
-    <div className="b-input">
-      <label className="b-input__label">
-        {label}
-      </label>
-      <input type="text" {...input} className="b-input__ctrl"/>
+    <div className="form-group">
+      <label>{ label }</label>
+      <input type="text" className="form-control" {...input} />
       { errorText }
     </div>
   )
 };
 
 export default InputField;
+
